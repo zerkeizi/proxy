@@ -1,0 +1,16 @@
+{
+  "name": "proxy",
+  "version": "0.1.0",
+  "description": "A proxy server to bypass CORS problem",
+  "main": "index.js",
+  "author": "Nicolay Nikolov",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^1.0.6",
+    "morgan": "^1.10.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
