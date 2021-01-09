@@ -6,7 +6,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 const app = express();
 
 // Configuration
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const HOST = "localhost";
 // const API_SERVICE_URL = "https://jsonplaceholder.typicode.com";
 const API_SERVICE_URL = "https://s3.amazonaws.com/data-production-walltime-info/production/dynamic/walltime-info.json?now=1528962473468.679.0000000000873";
@@ -22,7 +22,7 @@ app.get('/info', (req, res, next) => {
 
 // Authorization
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", process.env.ORIGIN || "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
   next();
